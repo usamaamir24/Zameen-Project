@@ -1,0 +1,96 @@
+.green-navbar {
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+}
+.navbar-left{
+    display: flex;
+    margin-left: 20px;
+    font-weight: 100px;
+}
+.navbar-left a{
+    height: 30px;
+    /* border: 1px solid black; */
+   
+}
+.logo{
+    width: 30px;
+}
+.properties{
+    width: 80px;
+}
+.plot-finder{
+    width: 80px;
+}
+.area-guides{
+    width: 100px;
+}
+.blog{
+    width: 40px;
+}
+.maps{
+    width: 40px;
+}
+.green-navbar .navbar-left a,
+.green-navbar .navbar-right a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.dropdown-btn{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    /* border: 1px solid black; */
+    width: 70px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+
+.green-navbar .search-input {
+    width: 100px;
+    border-radius: 4px;
+    border: 1px solid white;
+    height: 25px;
+}
+
+.add-property-btn {
+    margin: 0px , 10px ;
+    background-color: white;
+    color: black;
+    border: none;
+    width: 130px;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.navbar-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    
+}
+/* Hide Maps first */
+@media (max-width: 1150px) { /* Adjust breakpoint as needed */
+    .green-navbar .maps {
+        display: none;
+    }
+}
+
+/* Hide Blog next */
+@media (max-width: 1080px) {
+    .green-navbar .blog {
+        display: none;
+    }
+}
+
+/* Hide Area Guides last */
+@media (max-width: 900px) {
+    .green-navbar .area-guides {
+        display: none;
+    }
+}
