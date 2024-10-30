@@ -4,6 +4,7 @@ import './App.css';
 import GreenNavbar from './Components/GreenNavbar';
 import GrayNavbar from './Components/GrayNavbar';
 import Finder from './Components/Finder';
+import Calculator from './Components/Calculator';
 
 function App() {
   const [hiddenLinks, setHiddenLinks] = useState([]);
@@ -20,6 +21,7 @@ function App() {
    <GreenNavbar/>
    <GrayNavbar   hiddenLinks={hiddenLinks}/>
    <Finder  onBuyClick={hideLinksForBuy} onRentClick={showAllLinks}/>
+   <Calculator/>
     </div>
   );
 }

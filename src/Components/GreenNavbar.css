@@ -52,6 +52,7 @@
 
 .green-navbar .search-input {
     width: 100px;
+    padding-left: 10px;
     border-radius: 4px;
     border: 1px solid white;
     height: 25px;
