@@ -5,11 +5,27 @@ export default function Calculator() {
   const [propertyPrice, setPropertyPrice] = useState(15000000);
   const [downPayment, setDownPayment] = useState(30); // in percentage
   const [loanPeriod, setLoanPeriod] = useState(20); // in years
+  const annualInterestRate = 3; // Fixed interest rate
 
+  // Calculate the initial deposit
   const initialDeposit = propertyPrice * (downPayment / 100); 
-  const monthlyInstallments = (propertyPrice - initialDeposit) / (loanPeriod * 12); 
-  const interestRate = " 3 % Fixed";
+
+  // Calculate the principal amount
+  const principal = propertyPrice - initialDeposit; 
+
+  // Calculate monthly interest rate
+  const monthlyInterestRate = annualInterestRate / 12 / 100; 
+
+  // Calculate total number of payments (months)
+  const totalPayments = loanPeriod * 12; 
+
+  // Calculate monthly installments (EMI)
+  const monthlyInstallments = (principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments)) / 
+                              (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
+
+  const interestRate = "3% Fixed";
   const loanType = "Conventional";
+
 
   function hide(){
     const a=document.getElementsByClassName('loan-details')
@@ -46,7 +62,7 @@ export default function Calculator() {
           <p className="input-value">% {downPayment} <span>({(propertyPrice * downPayment / 100).toLocaleString()} PKR)</span></p>
           <input
             type="range"
-            min="0"
+            min="5"
             max="100"
             step="1"
             value={downPayment}
